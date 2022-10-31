@@ -1,0 +1,17 @@
+<div>
+  <% if  pagination.previous_page? %>
+    <%= link_to 'First', employees_path(page: 1, per_page: params[:per_page]) %>
+    <%= link_to '< Previous', employees_path(page: pagination.previous_page, per_page: params[:per_page]) %>
+  <% else %>
+    <span>First</span>
+    <span>&#60; Previous</span>
+  <% end %>
+  <span><%= "Page #{pagination.page} of #{pagination.total_pages}" %></span>
+  <% if pagination.next_page? %>
+    <%= link_to 'Next >', employees_path(page: pagination.next_page, per_page: params[:per_page]) %>
+    <%= link_to 'Last', employees_path(page: pagination.total_pages, per_page: params[:per_page]) %>
+  <% else %>
+    <span>Next &#62;</span>
+    <span>Last </span>
+  <% end %>
+</div>

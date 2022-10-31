@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Employees</h1>
+
+<div id="employees">
+
+  <%= form_tag employees_path, :method => "get" do %>
+    <b>Email: </b>
+    <%= email_field_tag :email, params[:email], :required => true %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+  <%= render partial: 'employee', locals: { employees: @employees } %>
+</div>
+
+<% if params[:email].present? %>
+  <%= link_to "Back to list", employees_path %>
+<% end %>
+
+<%= render partial: 'pagination', locals: { pagination: @pagination } %>

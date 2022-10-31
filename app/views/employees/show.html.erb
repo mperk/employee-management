@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Employee Details</h2>
+<p><%= image_tag(@employee["avatar"]) %> </p>
+<p><b>Id: </b><%= @employee["id"] %></p>
+<p><b>Email: </b><%= @employee["email"] %></p>
+<p><b>First Name: </b><%= @employee["first_name"] %></p>
+<p><b>Last Name: </b><%= @employee["last_name"] %></p>
+<div>
+  <%#= link_to "Edit this employee", edit_employee_path(@employee) %>
+  <%= link_to "Back to employee list", employees_path %>
+
+</div>
